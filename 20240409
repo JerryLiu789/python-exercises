@@ -1,0 +1,41 @@
+
+"""
+Method 1
+"""
+
+s = input() # This company is not poor at all. 
+
+if 'not' and 'at all' in s:
+
+    c1 = s.find('not')
+
+    c2 = s.find('at all')+6
+
+    d = s[:c1] + 'good' + s[c2:len(s)] 
+
+    print(d) # This company is good.
+
+else:
+
+    print(s)
+
+
+"""
+Method 2
+"""
+
+s = input()  
+
+if 'not' and 'at all' in s:
+
+    s1 = s.split('not')[0]
+
+    s2 = s.split('at all')[1]
+
+    d = f'{s1}good{s2}'
+
+    print(d)
+
+else:
+    print(s)
+
