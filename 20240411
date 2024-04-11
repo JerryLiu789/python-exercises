@@ -1,0 +1,23 @@
+
+a, b = int(input()), int(input()) # 11, 20
+
+
+def Self_Dividing_Number(x):
+    x_list = [int(i) for i in str(x)]
+    for i in x_list:
+        if i == 0:
+            return False
+        elif x % i != 0:
+            return False
+    return True
+
+
+find_dividing = [i for i in range(a,b+1) if Self_Dividing_Number(i) == True]
+
+calculate_gap = [find_dividing[i]-find_dividing[i-1] for i in range(1,len(find_dividing))] 
+
+find_index = calculate_gap.index(max(calculate_gap))
+
+d = find_dividing[find_index],find_dividing[find_index+1]
+
+print(d) # (12, 15) 
